@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "a0bf2a00-74e5-4381-aaa7-17e1d761267a",
+		"name": "EPMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36684079"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@epms.io\",\r\n    \"password\": \"Password@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Performance Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6IkhSX01BTkFHRVIiLCJ1c2VySWQiOjIsInN1YiI6ImhyQGVwbXMuaW8iLCJpYXQiOjE3NjUwODQ1NDMsImV4cCI6MTc2NTA4ODE0M30.S72Wk3qkUjiIrqCE2IS0dTlvisLh6M76x2Gkzi9DRbc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 3,\r\n    \"score\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/reviews",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Bonus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6IkFETUlOIiwidXNlcklkIjoxLCJzdWIiOiJhZG1pbkBlcG1zLmlvIiwiaWF0IjoxNzY1MDg0NjkyLCJleHAiOjE3NjUwODgyOTJ9.Ftnpa_EJ8NGKNIlYRH3wwp4AbQAuwwsZHARAInaIIaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 3,\r\n    \"amount\": 55450\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/bonus/approve",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bonus",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Employee Performance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6IkFETUlOIiwidXNlcklkIjoxLCJzdWIiOiJhZG1pbkBlcG1zLmlvIiwiaWF0IjoxNzY1MDg1NjkzLCJleHAiOjE3NjUwODkyOTN9.0RwErr1gj8oYha0727vOwqYJ-vDN_5qSPwzKnHfM71c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/employees/performance?department=Engineering&minScore=5&minAverageScore=0&includeCollaborations=true&page=0&size=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"performance"
+					],
+					"query": [
+						{
+							"key": "department",
+							"value": "Engineering"
+						},
+						{
+							"key": "minScore",
+							"value": "5"
+						},
+						{
+							"key": "minAverageScore",
+							"value": "0"
+						},
+						{
+							"key": "includeCollaborations",
+							"value": "true"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Overdue Training Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6IkFETUlOIiwidXNlcklkIjoxLCJzdWIiOiJhZG1pbkBlcG1zLmlvIiwiaWF0IjoxNzY1MDg3MDk1LCJleHAiOjE3NjUwOTA2OTV9.xkf7IBq6VHYwL4KzMC48LKIFQqnvr1thb6IxZiU2WvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/training/overdue?startDate=2023-01-01&endDate=2025-01-01&trainingType=SECURITY",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"training",
+						"overdue"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-01-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "trainingType",
+							"value": "SECURITY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Dashboard (Admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6IkFETUlOIiwidXNlcklkIjoxLCJzdWIiOiJhZG1pbkBlcG1zLmlvIiwiaWF0IjoxNzY1MDg3MDk1LCJleHAiOjE3NjUwOTA2OTV9.xkf7IBq6VHYwL4KzMC48LKIFQqnvr1thb6IxZiU2WvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/admin/dashboard",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"admin",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
