@@ -1,0 +1,1 @@
+package com.example.epms.domain.repo; import com.example.epms.domain.link.EmployeeProject; import com.example.epms.domain.link.EmployeeProjectId; import org.springframework.data.jpa.repository.JpaRepository; public interface EmployeeProjectRepository extends JpaRepository<EmployeeProject, EmployeeProjectId>{}

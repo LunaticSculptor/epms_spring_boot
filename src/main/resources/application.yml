@@ -1,0 +1,21 @@
+spring:
+  application:
+    name:epms
+  datasource:
+    url: jdbc:mysql://localhost:3306/epms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+server:
+  port: 8080
+
+jwt:
+  secret: uA0iX9C1B5Zb1GZ7WwXxS2E7M3Q9NvL5U8XrY6B2T3A=
+  expiration-minutes: 60   # 30 hours = 1800 minutes ///60 min

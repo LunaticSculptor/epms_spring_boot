@@ -1,0 +1,1 @@
+package com.example.epms.domain.repo; import com.example.epms.domain.Project; import org.springframework.data.jpa.repository.JpaRepository; public interface ProjectRepository extends JpaRepository<Project, Integer>{}

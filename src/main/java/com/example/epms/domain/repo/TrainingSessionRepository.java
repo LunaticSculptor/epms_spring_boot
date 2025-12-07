@@ -1,0 +1,1 @@
+package com.example.epms.domain.repo; import com.example.epms.domain.TrainingSession; import org.springframework.data.jpa.repository.JpaRepository; public interface TrainingSessionRepository extends JpaRepository<TrainingSession, Integer>{}
